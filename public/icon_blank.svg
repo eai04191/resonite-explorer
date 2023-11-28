@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
+    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 256 256">
+    <path d="M0 0h256v256H0z" style="fill:url(#a)" />
+    <defs>
+        <linearGradient id="a" x1="0" x2="1" y1="0" y2="0" gradientTransform="matrix(256 -256 256 256 0 256)"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" style="stop-color:#da6d56;stop-opacity:1" />
+            <stop offset="1" style="stop-color:#e89e87;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+</svg>
