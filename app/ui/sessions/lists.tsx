@@ -61,7 +61,7 @@ export default async function ListWrapper() {
     );
 }
 
-export function ListHeader({ session }: { session: Session }) {
+function ListHeader({ session }: { session: Session }) {
     return (
         <div
             data-name="header"
