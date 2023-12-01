@@ -38,7 +38,7 @@ export function UnregisteredUserTip({ username }: { username: string }) {
 export function UserTipSkelton({ username }: { username: string }) {
     return (
         <div className="flex flex-row gap-1">
-            <div className="h-6 w-6 animate-pulse rounded-full bg-gray-300/50"></div>
+            <div className="animate-pulse h-6 w-6 rounded-full bg-gray-300/50"></div>
             {username}
         </div>
     );
