@@ -25,10 +25,12 @@ export default async function ListWrapper() {
                         key={session.sessionId}
                         value={session.sessionId}
                         style={
-                            {
-                                "--thumbnail-url": `url('${session.thumbnailUrl}')`,
-                                backgroundImage: "var(--thumbnail-url)",
-                            } as React.CSSProperties
+                            session.thumbnailUrl
+                                ? ({
+                                      "--thumbnail-url": `url('${session.thumbnailUrl}')`,
+                                      backgroundImage: "var(--thumbnail-url)",
+                                  } as React.CSSProperties)
+                                : undefined
                         }
                         className={cn(
                             "overflow-hidden rounded-lg bg-black bg-cover bg-center bg-no-repeat",

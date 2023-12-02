@@ -4,6 +4,7 @@ import { unstable_noStore as noStore } from "next/cache";
 
 export interface Session {
     name: string;
+    description?: string;
     correspondingWorldId?: CorrespondingWorldId;
     tags: string[];
     sessionId: string;
@@ -12,17 +13,17 @@ export interface Session {
      * 未登録ユーザーが作ったセッションの場合はundefined?
      */
     hostUserId?: string;
-    hostUserSessionId: string;
+    hostUserSessionId?: string;
     hostMachineId: string;
     hostUsername: string;
     compatibilityHash: string;
     appVersion: string;
     headlessHost: boolean;
     sessionURLs: string[];
-    parentSessionIds: any[];
-    nestedSessionIds: any[];
+    parentSessionIds: string[];
+    nestedSessionIds: string[];
     sessionUsers: SessionUser[];
-    thumbnailUrl: string;
+    thumbnailUrl?: string;
     joinedUsers: number;
     activeUsers: number;
     totalJoinedUsers: number;
@@ -35,7 +36,6 @@ export interface Session {
     hideFromListing: boolean;
     hasEnded: boolean;
     isValid: boolean;
-    description?: string;
     universeId?: string;
 }
 
