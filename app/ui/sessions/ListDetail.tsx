@@ -104,7 +104,17 @@ export function ListDetail({ session }: { session: Session }) {
                 >
                     View in Resonite API
                 </ExternalLink>
-                <ExternalLink href={session.thumbnailUrl}>
+                <ExternalLink
+                    href={session.thumbnailUrl}
+                    className={cn({
+                        "cursor-pointer opacity-50": !session.thumbnailUrl,
+                    })}
+                    title={
+                        session.thumbnailUrl
+                            ? undefined
+                            : "This session has no thumbnail."
+                    }
+                >
                     Open thumbnail in new tab
                 </ExternalLink>
             </div>
