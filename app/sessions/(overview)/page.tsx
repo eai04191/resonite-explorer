@@ -10,11 +10,9 @@ export default async function Page() {
                 Public Sessions
             </h1>
 
-            <div className="">
-                <Suspense fallback={<></>}>
-                    <ListWrapper />
-                </Suspense>
-            </div>
+            <Suspense fallback={<></>}>
+                <ListWrapper />
+            </Suspense>
         </main>
     );
 }

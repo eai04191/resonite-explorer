@@ -39,7 +39,7 @@ export default async function ListWrapper() {
                     >
                         <AccordionTrigger
                             className={cn(
-                                "relative flex flex-1 text-start",
+                                "relative flex min-w-full flex-1 text-start",
                                 // アコーディオンが開いてるときはbg-black/70
                                 "bg-black bg-opacity-0 transition-colors [&[data-state=open]]:bg-opacity-70",
                                 // アコーディオンが開いてるときは下のborder-radiusを消す
@@ -82,7 +82,7 @@ function ListHeader({ session }: { session: Session }) {
                 data-name="name"
                 className={cn(
                     // scaleを大きくするときにはみ出ないようにマージンを取っておく
-                    "me-[10vw]",
+                    "me-[20%]",
                     "origin-top-left text-base font-semibold transition-[font-size,_line-height,_transform]",
                 )}
             >
