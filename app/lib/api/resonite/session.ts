@@ -86,7 +86,7 @@ export async function fetchSessions({
     // official API (Amsterdams)
     const url1 = `https://api.resonite.com/sessions?${params.toString()}`;
     // unofficial API (Tokyo)
-    const url2 = `https://resonite-alternative-api.mizle.net/sessions?${params.toString()}`;
+    const url2 = `https://resonite-alternative-api.eai.sh/sessions?${params.toString()}`;
     // Promise race!
     const fastestResponse = await Promise.race([fetch(url1), fetch(url2)]);
     console.log("Fastest response:", new URL(fastestResponse.url).host);
