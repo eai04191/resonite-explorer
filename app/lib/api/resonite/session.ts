@@ -83,8 +83,14 @@ export async function fetchSessions({
         includeEmptyHeadless: includeEmptyHeadless ? "true" : "false",
         minActiveUsers: minActiveUsers.toString(),
     });
-    const url = `https://api.resonite.com/sessions?${params.toString()}`;
-    const sessions = (await fetch(url).then((res) => res.json())) as Session[];
+    // official API (Amsterdams)
+    const url1 = `https://api.resonite.com/sessions?${params.toString()}`;
+    // unofficial API (Tokyo)
+    const url2 = `https://resonite-alternative-api.mizle.net/sessions?${params.toString()}`;
+    // Promise race!
+    const fastestResponse = await Promise.race([fetch(url1), fetch(url2)]);
+    console.log("Fastest response:", new URL(fastestResponse.url).host);
+    const sessions = (await fastestResponse.json()) as Session[];
 
     const sanitizedSessions = sessions
         // nameとdescriptionに含まれうるTMPのリッチテキストタグをサニタイズ
